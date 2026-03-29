@@ -76,12 +76,18 @@ sudo systemctl enable ssh
 Con estos comandos instalamos y activamos un servidor ssh lo cual nos permitira controlar ubuntu server remotamente.
 En esta captura se oberva que está activado correctamente
 ![ssh](imagenes/ssh.png)
+Aquí vemos una conexión realizada desde un terminal en windows hacia ubuntu-server
+![ssh](conexionssh.png)
 ### Apache
 
 ```
 sudo apt install apache2
 sudo systemctl start apache2
 ```
+Con estos comandos instalamos y activamos el servidor web apache2.
+introduciendo la dirección ip de ubuntu-server en el navegador web se observa que apache2 está
+funcionando correctamente.
+![apache2](apache2.png)
 
 ### Firewall
 
