@@ -5,7 +5,6 @@
 Laboratorio de administración de servidores Linux realizado en Ubuntu Server.
 En este laboratorio se configuran usuarios, permisos, acceso remoto SSH, servidor web Apache, firewall UFW y copias de seguridad.
 
-Este proyecto forma parte de mi portfolio de administración de sistemas y redes.
 
 ---
 
