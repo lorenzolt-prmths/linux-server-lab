@@ -96,7 +96,10 @@ sudo ufw allow ssh
 sudo ufw allow 80
 sudo ufw enable
 ```
-
+Con estos comandos activamos el cortafuegos y añdimos los puertos ssh (22) y el puerto 80
+para tráfico web.
+Aquí se observa el cortafuegos funcionando y los puertos permitidos.
+![fireware](imagenes/fireawre.png)
 ### Backup
 
 ```
