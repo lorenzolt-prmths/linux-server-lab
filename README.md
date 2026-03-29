@@ -89,9 +89,11 @@ sudo systemctl enable ssh
 Se instala y activa el servicio SSH para permitir la administración remota del servidor.
 
 Estado del servicio SSH:
+
 ![ssh](imagenes/ssh.png)
 
 Conexión SSH desde un equipo Windows al servidor Ubuntu:
+
 ![ssh](imagenes/conexionssh.png)
 
 ---
@@ -124,6 +126,7 @@ Se activa el firewall UFW y se permiten los puertos:
 * 80 (HTTP)
 
 Estado del firewall:
+
 ![firewall](imagenes/firewall.png)
 
 ---
