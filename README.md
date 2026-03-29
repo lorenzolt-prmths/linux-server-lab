@@ -64,7 +64,7 @@ chown juan /empresa/privado
 Aquí hemos realizado la creación de una estructura formada por la carpeta empresa y dentro dos 
 subcarpetas una públucia que le hemos añadido permisos de control total sobre el propietario de la carpeta, lectura y entrada a la carpeta a los grupos e igual permisos para otros usuarios. A la otra subcarpeta llamada privada le hemos añadido control total para el propietario y hemos denegado el accesos a los grupos y otros usuarios. Por último con el último comando hemos hecho a juan dueño de la 
 carpeta privado.
-![estructura](estructura.png)
+![estructura](imagenes/estructura.png)
 
 ### SSH
 
