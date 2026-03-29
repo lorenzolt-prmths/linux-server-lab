@@ -48,8 +48,8 @@ sudo adduser fernando
 sudo usermod -aG sudo juan
 con estos comandos creamos los dos usuarios y añadimos juan al grupo sudo para que obtenga
 permisos de administrador.
-![usuarios](imagenes/usuarios.png)
 ```
+![usuarios](imagenes/usuarios.png)
 
 ### Permisos y directorios
 
