@@ -3,7 +3,9 @@
 ## Descripción
 
 Laboratorio de administración de servidores Linux realizado en Ubuntu Server.
-Se configuran usuarios, permisos, acceso remoto SSH, servidor web Apache, firewall y copias de seguridad.
+En este laboratorio se configuran usuarios, permisos, acceso remoto SSH, servidor web Apache, firewall UFW y copias de seguridad.
+
+Este proyecto forma parte de mi portfolio de administración de sistemas y redes.
 
 ---
 
@@ -21,9 +23,9 @@ Se configuran usuarios, permisos, acceso remoto SSH, servidor web Apache, firewa
 
 ## Arquitectura del sistema
 
-Servidor Ubuntu Server con:
+Servidor Ubuntu Server configurado con:
 
-* Acceso SSH
+* Acceso remoto mediante SSH
 * Servidor web Apache
 * Firewall UFW
 * Sistema de copias de seguridad
@@ -47,9 +49,12 @@ sudo adduser juan
 sudo adduser fernando
 sudo usermod -aG sudo juan
 ```
-con estos comandos creamos los dos usuarios y añadimos juan al grupo sudo para que obtenga
-permisos de administrador.
+
+Con estos comandos se crean dos usuarios y se añade el usuario **juan** al grupo sudo para otorgarle permisos de administrador.
+
 ![usuarios](imagenes/usuarios.png)
+
+---
 
 ### Permisos y directorios
 
@@ -61,10 +66,17 @@ chmod 755 /empresa/publico
 chmod 700 /empresa/privado
 chown juan /empresa/privado
 ```
-Aquí hemos realizado la creación de una estructura formada por la carpeta empresa y dentro dos 
-subcarpetas una públucia que le hemos añadido permisos de control total sobre el propietario de la carpeta, lectura y entrada a la carpeta a los grupos e igual permisos para otros usuarios. A la otra subcarpeta llamada privada le hemos añadido control total para el propietario y hemos denegado el accesos a los grupos y otros usuarios. Por último con el último comando hemos hecho a juan dueño de la 
-carpeta privado.
+
+Se crea una estructura de directorios para la empresa con dos carpetas:
+
+* **publico**: accesible por otros usuarios
+* **privado**: acceso restringido únicamente al propietario
+
+Se asignan permisos y se establece el usuario **juan** como propietario de la carpeta privada.
+
 ![estructura](imagenes/estructura.png)
+
+---
 
 ### SSH
 
@@ -73,21 +85,30 @@ sudo apt install openssh-server
 sudo systemctl start ssh
 sudo systemctl enable ssh
 ```
-Con estos comandos instalamos y activamos un servidor ssh lo cual nos permitira controlar ubuntu server remotamente.
-En esta captura se oberva que está activado correctamente
+
+Se instala y activa el servicio SSH para permitir la administración remota del servidor.
+
+Estado del servicio SSH:
 ![ssh](imagenes/ssh.png)
-Aquí vemos una conexión realizada desde un terminal en windows hacia ubuntu-server
+
+Conexión SSH desde un equipo Windows al servidor Ubuntu:
 ![ssh](imagenes/conexionssh.png)
+
+---
+
 ### Apache
 
 ```
 sudo apt install apache2
 sudo systemctl start apache2
 ```
-Con estos comandos instalamos y activamos el servidor web apache2.
-introduciendo la dirección ip de ubuntu-server en el navegador web se observa que apache2 está
-funcionando correctamente.
+
+Se instala y activa el servidor web Apache.
+Accediendo desde el navegador a la dirección IP del servidor se comprueba que el servicio web está funcionando correctamente.
+
 ![apache2](imagenes/apache2.png)
+
+---
 
 ### Firewall
 
@@ -96,22 +117,33 @@ sudo ufw allow ssh
 sudo ufw allow 80
 sudo ufw enable
 ```
-Con estos comandos activamos el cortafuegos y añdimos los puertos ssh (22) y el puerto 80
-para tráfico web.
-Aquí se observa el cortafuegos funcionando y los puertos permitidos.
+
+Se activa el firewall UFW y se permiten los puertos:
+
+* 22 (SSH)
+* 80 (HTTP)
+
+Estado del firewall:
 ![firewall](imagenes/firewall.png)
+
+---
+
 ### Backup
 
 ```
-tar -czvf backup.tar.gz /empresa
+tar -czvf /backups/empresa_backup.tar.gz /empresa
 ```
-Hemos creado una carpeta llamada backups y en ella hemos introducido una copia de la carpeta empresa con el comando anteriormente descrito.
+
+Se crea una copia de seguridad comprimida de la carpeta **/empresa** en la carpeta **/backups**.
+
 ![backups](imagenes/backups.png)
 
-Para restaurar la copia utilizaremos el siguiente comando.
+Para restaurar la copia de seguridad:
+
 ```
 tar -xzvf /backups/empresa_backup.tar.gz -C /
 ```
+
 ---
 
 ## Pruebas de funcionamiento
@@ -138,4 +170,5 @@ tar -xzvf /backups/empresa_backup.tar.gz -C /
 
 ## Conclusiones
 
-Este laboratorio permite practicar tareas básicas de administración de sistemas Linux como gestión de usuarios, permisos, servicios, seguridad y copias de seguridad.
+En este laboratorio se han realizado tareas básicas de administración de sistemas Linux como gestión de usuarios, permisos, configuración de servicios, seguridad mediante firewall y copias de seguridad.
+Este tipo de tareas son habituales en la administración de servidores Linux en entornos empresariales.
