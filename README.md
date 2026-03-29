@@ -73,7 +73,8 @@ sudo apt install openssh-server
 sudo systemctl start ssh
 sudo systemctl enable ssh
 ```
-
+Con estos comandos instalamos y activamos un servidor ssh lo cual nos permitira controlar ubuntu server remotamente.
+![ssh](imagenes/ssh.png)
 ### Apache
 
 ```
