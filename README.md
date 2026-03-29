@@ -43,9 +43,12 @@ sudo apt upgrade
 ### Creación de usuarios
 
 ```
-sudo adduser usuario1
-sudo adduser usuario2
-sudo usermod -aG sudo usuario1
+sudo adduser juan
+sudo adduser fernando
+sudo usermod -aG sudo juan
+con estos comandos creamos los dos usuarios y añadimos juan al grupo sudo para que obtenga
+permisos de administrador.
+![usuarios](usuarios.png)
 ```
 
 ### Permisos y directorios
