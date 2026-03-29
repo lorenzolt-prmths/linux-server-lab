@@ -105,7 +105,12 @@ Aquí se observa el cortafuegos funcionando y los puertos permitidos.
 ```
 tar -czvf backup.tar.gz /empresa
 ```
-
+Hemos creado una carpeta llamada backups y en ella hemos introducido una copia de la carpeta empresa con el comando anteriormente descrito.
+![backups](imagenes/backups.png)
+Para restaurar la copia utilizaremos el siguiente comando.
+```
+tar -xzvf /backups/empresa_backup.tar.gz -C /
+```
 ---
 
 ## Pruebas de funcionamiento
